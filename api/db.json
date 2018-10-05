@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Consectetur lorem?",
+      "body": "Non quam lacus suspendisse faucibus."
+    },
+    {
+      "id": 2,
+      "title": "Tempor commodo lacus",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit!"
+    },
+    {
+      "id": 3,
+      "title": "Ut enim ad minim...",
+      "body": "Duis aute irure dolor in reprehenderit in? Vitae tortor condimentum lacinia."
+    },
+    {
+      "id": 4,
+      "title": "Excepteur sint",
+      "body": "Sed do eiusmod tempor incididunt ut labore et dolore."
+    },
+    {
+      "id": 5,
+      "title": "Est Laborum!",
+      "body": "Voluptate velit esse cillum dolore eu fugiat nulla pariatur..."
+    },
+    {
+      "id": 6,
+      "title": "Eu ultrices vitae",
+      "body": "Non quam lacus suspendisse faucibus."
+    },
+    {
+      "id": 7,
+      "title": "Blandit volutpat maecenas.",
+      "body": "Pulvinar elementum integer enim neque volutpat ac tincidunt."
+    }
+  ]
+}
