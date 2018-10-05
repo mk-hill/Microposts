@@ -2,6 +2,8 @@ class UI {
   constructor() {
     this.posts = document.querySelector('#posts');
     this.postsContainer = document.querySelector('.posts-container');
+    this.cardForm = document.querySelector('.card-form');
+    this.formEnd = document.querySelector('.form-end');
     this.titleInput = document.querySelector('#title');
     this.bodyInput = document.querySelector('#body');
     this.idInput = document.querySelector('#id');
@@ -40,10 +42,7 @@ class UI {
     div.className = className;
     div.appendChild(document.createTextNode(message));
     
-    // Get parent
-    const container = this.postsContainer;
-    const posts = this.posts;
-    container.insertBefore(div, posts);
+    this.postsContainer.insertBefore(div, this.posts);
 
     setTimeout(() => {
       this.clearAlert();
@@ -60,6 +59,43 @@ class UI {
   clearInput() {
     this.titleInput.value = '';
     this.bodyInput.value = '';
+  }
+
+  clearInputId() {
+    this.idInput.value = '';
+  }
+
+  changeFormState(state) {
+    if (state === 'edit') {
+      // Change add button to update button
+      this.postSubmit.textContent = 'Update post';
+      this.postSubmit.className = 'post-submit btn btn-warning btn-block';
+
+      // Create cancel button
+      const button = document.createElement('button');
+      button.className = 'post-cancel btn btn-light btn-block';
+      button.appendChild(document.createTextNode('Cancel update'));
+
+      // Insert cancel button into cardForm before formEnd
+      this.cardForm.insertBefore(button, this.formEnd);
+
+    } else {
+      this.postSubmit.textContent = 'Post it';
+      this.postSubmit.className = 'post-submit btn btn-primary btn-block';
+      if(document.querySelector('.post-cancel')) {
+        document.querySelector('.post-cancel').remove();
+      }
+      this.clearInputId();
+      this.clearInput();
+    }
+  }
+
+  // Populate input fields for edit state
+  populateForm(data) {
+    this.titleInput.value = data.title;
+    this.bodyInput.value = data.body;
+    this.idInput.value = data.id;
+    this.changeFormState('edit');
   }
 }
 
